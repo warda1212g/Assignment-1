@@ -1,0 +1,120 @@
+body{
+    min-width: 100px;
+    min-height: 100vh;
+    min-width: 300px;
+}
+
+* { 
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    text-decoration: none !important;
+}
+.logo{
+    color: white;
+}
+
+header {
+    width: 100%;
+    min-width: 200px;
+    height: 100vh;
+    background-image: url('bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.navBar {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: #5c0067; */
+}
+
+.section1 {
+    overflow: auto;
+}
+
+@media screen and (max-width: 998px) {
+    .navBar {
+        /* background-color: yellow; */
+        width: 100%;
+        min-width: 200px;
+    }
+   
+    .navLinks {
+        position: absolute;
+        background-color: green;
+        width: 0%;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        align-items: start;
+        justify-content: start;
+        display: flex;
+        padding-top: 100px;
+        transition: all 0.3s ease;
+    }
+    
+    .navLinks.open {
+        width: 50%;
+    }
+}
+
+.btn-parent {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    top: 20px;
+    right: 0;
+}
+
+.btn-child {
+    width: 80%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 5px #888888;
+}
+
+.btn-child::before, .btn-child::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 0 5px #888888;
+}
+
+.btn-child::before {
+    transform: translateY(-10px);
+}
+
+.btn-child::after {
+    transform: translateY(10px);
+}
+
+.btn-parent.open .btn-child {
+    box-shadow: none;
+    transform: translateX(-50px);
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.btn-parent.open .btn-child::before {
+    transform: rotate(45deg) translate(35px, -35px);
+    box-shadow: none;
+}
+
+.btn-parent.open .btn-child::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+    box-shadow: none;
+}
+.card-img-top{
+    height: 300px !important;
+}
